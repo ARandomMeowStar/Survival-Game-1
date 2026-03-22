@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c23a877e1c9430fb70daaa90104d90, type: 3}
+  m_Name: ammobox_1
+  m_EditorClassIdentifier: 
+  ItemName: Ammobox
+  ItemIcon: {fileID: 21300000, guid: aa906f1887cb8cd459ad79dc4fff2339, type: 3}
+  ItemsInStack: 64
+  ItemType: 0
+  EquippedName: 
+  ItemObject: {fileID: 1165078850064397093, guid: f28031915a15e4dc19a714963a005da1, type: 3}
+  SellCost: 75
+  BuyCost: 100
