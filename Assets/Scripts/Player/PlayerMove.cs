@@ -26,6 +26,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [Header("Other")]
     [SerializeField] private DialogDisplayer dialogDisplayer;
+    [SerializeField] private MerchantDisplayer merchantDisplayer;
     private bool isGrounded;
     private float mouseX;
     private float mouseY;
@@ -71,7 +72,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void DoRotation()
     {
-        if (dialogDisplayer.IsInDialog)
+        if (dialogDisplayer.IsInDialog || merchantDisplayer.IsWithMerchant)
             return;
         if (mouseX == 0f && mouseY == 0f)
             return;

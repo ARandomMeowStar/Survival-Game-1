@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MerchantDisplayer : MonoBehaviour
 {
+    
     public bool IsWithMerchant => merchantCanvas.activeSelf;
     [SerializeField] private GameObject merchantCanvas;
     [SerializeField] private TMP_Text buttonText;

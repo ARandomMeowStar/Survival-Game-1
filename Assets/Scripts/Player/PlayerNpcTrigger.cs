@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerNpcTrigger : MonoBehaviour
+{
+     [SerializeField] private MerchantDisplayer merchantDisplayer;
+   [SerializeField] private DialogDisplayer dialogDisplayer;
+   private PlayerUI playerUI;
+
+   void Start()
+   {
+      playerUI = GetComponent<PlayerUI>();
+   }
+   private void OnTriggerStay(Collider other)
+   {
+      if (playerUI.IsInInventory || merchantDisplayer.IsWithMerchant
+          || dialogDisplayer.IsInDialog|| !Input.GetKeyDown(KeyCode.F))
+          return;
+      if (other.TryGetComponent(out NpcMerchant merchant))
+        {
+            merchantDisplayer.SetMerchantItems(merchant.Items);
+        }
+        else if (other.TryGetComponent(out NpcDialog npc))
+        {
+            dialogDisplayer.StartDialog(npc);
+        }
+   }
+   private void OnTriggerExit(Collider other)
+   {
+      if (dialogDisplayer.IsInDialog)       
+          dialogDisplayer.CloseDialog();
+          
+      if (merchantDisplayer.IsWithMerchant)
+        merchantDisplayer.CloseMerchant();
+   }
+
+}

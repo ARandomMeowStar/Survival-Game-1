@@ -8,6 +8,7 @@ public class PlayerUI : MonoBehaviour
     public bool IsInInventory => invCanvas.enabled;
     [SerializeField] private Canvas invCanvas;
     [SerializeField] private DialogDisplayer dialogDisplayer;
+    [SerializeField] private MerchantDisplayer merchantDisplayer;
     [SerializeField] GameObject invGroup;
     [SerializeField] GameObject craftGroup;
     void Start()
@@ -28,7 +29,7 @@ public class PlayerUI : MonoBehaviour
 
      private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)&& !dialogDisplayer.IsInDialog)
+        if (Input.GetKeyDown(KeyCode.E)&& !dialogDisplayer.IsInDialog && !merchantDisplayer.IsWithMerchant)
         {
             invCanvas.enabled = !invCanvas.enabled;
 
